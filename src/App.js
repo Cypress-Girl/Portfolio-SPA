@@ -11,8 +11,10 @@ function App() {
         <Router>
             <div className=".app-wrapper">
                 <header>
+                    {/*<Link to="/" className="logo">*/}
+                    {/*    <img src={logo} alt="logo"/>*/}
+                    {/*</Link>*/}
                     <div className="menu-header">
-                        <Link to="/">Home</Link>
                         <Link to="/projects">Проекты</Link>
                         <Link to="/blog">Блог</Link>
                         <Link to="/contacts">Контакты</Link>

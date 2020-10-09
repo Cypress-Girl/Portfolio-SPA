@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="logo_not_white.svg"
+   id="svg11"
+   version="1.1"
+   viewBox="0 0 42 31"
+   height="31px"
+   width="42px">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Fill 1</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg11"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="19.643969"
+     inkscape:cx="18.62367"
+     inkscape:zoom="9.6942059"
+     showgrid="false"
+     id="namedview13"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title2">Fill 1</title>
+  <desc
+     id="desc4">Created with Sketch.</desc>
+  <defs
+     id="defs6" />
+  <g
+     style="fill:#011f5c;fill-opacity:1"
+     fill-rule="evenodd"
+     fill="none"
+     stroke-width="1"
+     stroke="none"
+     id="Page-1">
+    <g
+       style="fill:#011f5c;fill-opacity:1"
+       fill="#FFFFFF"
+       transform="translate(-155.000000, -15.000000)"
+       id="Massege-RU">
+      <path
+         style="fill:#011f5c;fill-opacity:1"
+         id="Fill-1"
+         d="M190.597981,21.6515178 L190.597981,34.071509 C190.597981,36.3846946 189.826722,37.7905863 189.147139,38.5618453 C188.285387,39.6045828 186.697327,40.6479118 184.339191,40.6479118 C181.981054,40.6479118 180.393586,39.6045828 179.531242,38.5618453 C178.851067,37.7905863 178.079808,36.3846946 178.079808,34.071509 L178.079808,15 L167.162708,15 C164.695152,15 161.919447,15.2277107 159.628146,17.3137771 C158.085628,18.7202602 156.719955,21.0328544 156.719955,24.3450098 C156.719955,27.8369679 158.261882,30.3323221 160.025013,31.6471295 C160.949459,32.3278958 162.139469,32.8276763 163.241352,33.0080705 L155,45.2553565 L161.768035,45.2553565 L171.865377,28.925839 L168.263999,28.925839 C167.11894,28.925839 162.624463,28.925839 162.624463,24.3450098 C162.624463,19.854082 167.11894,19.8085399 168.176464,19.8085399 L172.18358,19.8085399 L172.18358,33.5729113 C172.18358,36.4302368 172.637819,39.3331044 174.451815,41.6456986 C176.628966,44.5030241 180.438536,46 184.339191,46 C188.239845,46 192.049415,44.5030241 194.227157,41.6456986 C196.040562,39.3331044 196.494209,36.4302368 196.494209,33.5729113 L196.494209,18.9899643 L190.597981,21.6515178 Z" />
+    </g>
+  </g>
+</svg>
