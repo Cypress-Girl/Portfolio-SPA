@@ -167,3 +167,8 @@
 .cells-4 .box {
   width: 288px;
 }
+
+.cells-4 .box:nth-child(2){
+  /*width: 288px;*/
+  height: 360px;
+}

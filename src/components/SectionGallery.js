@@ -10,8 +10,7 @@ function SectionGallery() {
 
                 {projectsInfo.map((item, index) => (
                     (index < 3) ?
-                        <ProjectBox key={index} title={item.title} img={item.img}
-                                    description={item.description}/> :
+                        <ProjectBox key={index} project={item} /> :
                         null
                 ))}
             </div>
@@ -19,8 +18,7 @@ function SectionGallery() {
             <div className="gallery-box cells-4">
                 {projectsInfo.map((item, index) => (
                     (index >= 3) ?
-                        <ProjectBox key={index} title={item.title} img={item.img}
-                                    description={item.description}/> :
+                        <ProjectBox key={index} project={item} /> :
                         null
                 ))}
             </div>

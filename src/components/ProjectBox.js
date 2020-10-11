@@ -2,21 +2,14 @@ import React from "react";
 import {Link} from 'react-router-dom'
 
 function ProjectBox(props) {
-    // return (
-    //     <div className="box">
-    //         <img src={props.img}/>
-    //         <span>
-    //             <span className="blue-span">{props.title}</span> — {props.description}
-    //         </span>
-    //     </div>
-    // )
+    let project = props.project;
     return (
-        <Link to={`/projects/${props.key}`}>
+        <Link to={`/projects/${project.id}`}>
             <div className="box">
-                <img src={props.img} alt={`project ${props.title}`} />
+                <img src={project.img} alt={`project ${project.title}`} />
                 <span>
-                <span className="blue-span">{props.title}</span> — {props.description}
-            </span>
+                    <span className="blue-span">{project.title}</span> — {project.shortInfo}
+                </span>
             </div>
         </Link>
     )

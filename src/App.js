@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom'
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import BlogPage from "./pages/BlogPage";
@@ -11,25 +11,23 @@ function App() {
         <Router>
             <div className=".app-wrapper">
                 <header>
-                    {/*<Link to="/" className="logo">*/}
-                    {/*    <img src={logo} alt="logo"/>*/}
-                    {/*</Link>*/}
                     <div className="menu-header">
-                        <Link to="/projects">Проекты</Link>
-                        <Link to="/blog">Блог</Link>
-                        <Link to="/contacts">Контакты</Link>
+                        <NavLink to="/projects/0">Проекты</NavLink>
+                        <NavLink to="/blog">Блог</NavLink>
+                        <NavLink to="/contacts">Контакты</NavLink>
                     </div>
                 </header>
                 <Switch>
                     <Route exact={true} path="/">
                         <HomePage/>
                     </Route>
-                    <Route exact={true} path="/projects">
-                        <ProjectsPage/>
-                    </Route>
+
+                    <Route path="/projects/:id" children={(props) => <ProjectsPage {...props}/>} />
+
                     <Route exact={true} path="/blog">
                         <BlogPage/>
                     </Route>
+
                     <Route exact={true} path="/contacts">
                         <ContactsPage/>
                     </Route>

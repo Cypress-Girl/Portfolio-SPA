@@ -4,7 +4,6 @@ import SectionSkill from "../components/SectionSkill";
 import SectionPerson from "../components/SectionPerson";
 import SectionGallery from "../components/SectionGallery";
 import {Link} from 'react-router-dom'
-// import logo from "/images/logo_blue.svg";
 
 function HomePage() {
     return (

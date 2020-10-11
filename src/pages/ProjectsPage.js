@@ -2,26 +2,37 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Footer from "../components/Footer";
 import "./ProjectsPage.css";
+import projectsInfo from "../data/data";
+import ProjectPresentation from "../components/ProjectPresentation";
+import NavigateProjects from "../components/NavigateProjects";
 
-function ProjectsPage() {
+function LogoSVG() {
+    return (
+        <svg width="42" height="31" xmlns="http://www.w3.org/2000/svg" className="logo-svg" viewBox="0 0 42 31">
+            <path
+                d="M35.6 6.7V19c0 2.3-.8 3.7-1.5 4.5a6 6 0 01-4.8 2 6 6 0 01-4.8-2 6.6 6.6 0 01-1.4-4.5V0H12C9.8 0 7 .2 4.7 2.3a9.3 9.3 0 00-2.9 7A9 9 0 005 16.6c1 .7 2.1 1.2 3.2 1.4L0 30.3h6.8l10-16.4h-3.5c-1.2 0-5.7 0-5.7-4.6 0-4.4 4.5-4.5 5.6-4.5h4v13.8c0 2.8.4 5.7 2.3 8 2.1 2.9 6 4.4 9.8 4.4 4 0 7.7-1.5 10-4.4 1.7-2.3 2.2-5.2 2.2-8V4l-5.9 2.7z"/>
+        </svg>
+    )
+}
+
+function ProjectsPage(props) {
+    let project = projectsInfo[props.match.params.id];
     return (
         <React.Fragment>
-            <Link to="/" className="logo">
-                <img src="/images/logo_not_white.svg" alt="logo"/>
+            <Link to="/" className="logo-mini">
+                <LogoSVG/>
             </Link>
 
             <div className="projects-page">
-                <div id="project-title">
-                    projects page
-                </div>
+                <ProjectPresentation project={project} />
 
                 <div id="project-text">
                     <p>
-                        The way we work is not sustainable. Sherwin knows this well. He has twenty years of experience as a skilled information technology (IT) professional and is one of the many professionals and managers we interviewed in a Fortune 500 company we call TOMO. Sherwin has a hybrid role where he designs new software solutions to address business problems but also participates directly in developing that new software; he’s both a big picture thinker and attuned to the details of writing solid computer code. On the personal side, Sherwin is a divorced dad with two daughters who live mainly with him. He is also the point person for his elderly mother, who is deciding whether it is time to move into a nursing home.<br/><br/>
-                        Sherwin’s family caregiving feels manageable; it is his workload on the job that is overwhelming. Sherwin estimates he works about 70 hours per week. He starts work with calls at 5 a.m., pauses to get his kids ready and off to school, works a full day, prepares dinner and supervises their homework, and then routinely works, at home, until midnight. The long hours and intense pace are perhaps not surprising given the managers he reports to. Sherwin’s manager, Tanay, describes himself as a “super workaholic” and says his own boss (who sits two levels above Sherwin on the organizational chart) pushes teams so hard that he is “trying to get blood from a rock.”
+                        {project.description}
                     </p>
                 </div>
 
+                <NavigateProjects project={project}/>
             </div>
 
             <Footer/>
