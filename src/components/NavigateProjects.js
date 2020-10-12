@@ -1,22 +1,27 @@
 import React from "react";
-import {DIRECTION_NEXT, DIRECTION_PREVIOUS} from "../data/constants";
-import {projectsInfo} from "../data/data";
+import {DIRECTION_NEXT, DIRECTION_PREVIOUS, TYPE_PROJECT} from "../data/constants";
+import {blogArticle, projectsInfo} from "../data/data";
 import "./NavigateProjects.css";
 import {Link} from "react-router-dom";
 
 function ViewProject(props) {
-    let orderTitle = (props.direction === DIRECTION_NEXT) ? "Следующий проект" : "Предыдущий проект";
+
+    let orderTitle = (props.type === TYPE_PROJECT) ?
+        ((props.direction === DIRECTION_NEXT) ? "Следующий проект" : "Предыдущий проект") :
+        ((props.direction === DIRECTION_NEXT) ? "Следующая статья" : "Предыдущая статья");
+
+    let link = (props.type === TYPE_PROJECT) ? `/projects/${props.obj.id}` : `/blog/${props.obj.id}`;
 
     return (
-        <Link to={`/projects/${props.project.id}`}>
+        <Link to={link}>
                 <div className="div-navigate">
                     <div id="div-img">
-                        <img src={props.project.img} alt={`project ${props.project.id}`}/>
+                        <img src={props.obj.img} alt={`project ${props.obj.id}`}/>
                     </div>
                     <div id="div-title">
                         <p id="order">{orderTitle}</p>
                         <p id="shortInfo">
-                            {props.project.title} — {props.project.shortInfo}
+                            {props.obj.title} — {props.obj.shortInfo}
                         </p>
                     </div>
                 </div>
@@ -26,8 +31,7 @@ function ViewProject(props) {
 
 function EmptyDiv() {
     return (
-        <div style={{width: "50%"}}>
-        </div>
+        <div style={{width: "50%"}} />
     )
 }
 
@@ -37,11 +41,9 @@ function findNearIndex(index, direction, maxIndex) {
     switch (direction) {
         case DIRECTION_PREVIOUS:
             nearIndex = ((index - 1) >= 0) ? (index - 1) : -1;
-            console.log(`prev ${nearIndex}`);
             break;
         case DIRECTION_NEXT:
             nearIndex = ((index + 1) <= maxIndex) ? (index + 1) : -1;
-            console.log(`next ${nearIndex}`);
             break;
         default:
             nearIndex = -1;
@@ -51,28 +53,27 @@ function findNearIndex(index, direction, maxIndex) {
 }
 
 function NavigateProjects(props) {
-    let indexInArray = projectsInfo.indexOf(props.project, 0);
-    console.log(`ID = ${indexInArray}`);
+    let indexInArray;
+    let arrayOfObjects;
     let nextIndex, previousIndex;
 
+    if (props.type === TYPE_PROJECT){
+        arrayOfObjects = projectsInfo;
+    } else {
+        arrayOfObjects = blogArticle;
+    }
+
+    indexInArray = arrayOfObjects.indexOf(props.obj, 0);
+
     if (indexInArray >= 0) {
-        previousIndex = findNearIndex(indexInArray, DIRECTION_PREVIOUS, projectsInfo.length - 1);
-        nextIndex = findNearIndex(indexInArray, DIRECTION_NEXT, projectsInfo.length - 1);
+        previousIndex = findNearIndex(indexInArray, DIRECTION_PREVIOUS, arrayOfObjects.length - 1);
+        nextIndex = findNearIndex(indexInArray, DIRECTION_NEXT, arrayOfObjects.length - 1);
     }
 
     let previousProjectComponent = (previousIndex >= 0) ?
-        // (<Link to={`/projects/${previousIndex}`}>
-        <ViewProject project={projectsInfo[previousIndex]} direction={DIRECTION_PREVIOUS}/>
-        // </Link>)
-        : <EmptyDiv/>;
+        <ViewProject obj={arrayOfObjects[previousIndex]} direction={DIRECTION_PREVIOUS} type={props.type} /> : <EmptyDiv/>;
     let nextProjectComponent = (nextIndex >= 0) ?
-        // (<Link to={`/projects/${nextIndex}`}>
-        <ViewProject project={projectsInfo[nextIndex]} direction={DIRECTION_NEXT}/>
-        // </Link>)
-
-        : <EmptyDiv/>;
-
-    debugger;
+        <ViewProject obj={arrayOfObjects[nextIndex]} direction={DIRECTION_NEXT} type={props.type} /> : <EmptyDiv/>;
 
     return (
         <div id="navigate-project">

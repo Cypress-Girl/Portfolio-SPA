@@ -25,7 +25,7 @@ function ProjectsPage(props) {
                     </p>
                 </div>
 
-                <NavigateProjects project={project}/>
+                <NavigateProjects obj={project} type={TYPE_PROJECT}/>
             </div>
 
             <Footer/>

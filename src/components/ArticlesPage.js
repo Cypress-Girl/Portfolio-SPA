@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import LogoSVG from "./LogoSVG";
 import ProjectPresentation from "./ProjectPresentation";
-// import NavigateProjects from "./NavigateProjects";
+import NavigateProjects from "./NavigateProjects";
 import Footer from "./Footer";
 import {blogArticle} from "../data/data";
 import {TYPE_ARTICLE} from "../data/constants";
@@ -24,7 +24,7 @@ function ArticlesPage(props) {
                     </p>
                 </div>
 
-                {/*<NavigateProjects project={project}/>*/}
+                <NavigateProjects obj={article} type={TYPE_ARTICLE}/>
             </div>
 
             <Footer/>
