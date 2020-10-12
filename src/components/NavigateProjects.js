@@ -1,6 +1,6 @@
 import React from "react";
 import {DIRECTION_NEXT, DIRECTION_PREVIOUS} from "../data/constants";
-import projectsInfo from "../data/data";
+import {projectsInfo} from "../data/data";
 import "./NavigateProjects.css";
 import {Link} from "react-router-dom";
 
@@ -8,20 +8,19 @@ function ViewProject(props) {
     let orderTitle = (props.direction === DIRECTION_NEXT) ? "Следующий проект" : "Предыдущий проект";
 
     return (
-        // <Link to={`/projects/${props.project.id}`}>
-            <div className="div-navigate">
-                <div id="div-img">
-                    <img src={props.project.img}
-                         alt={`project ${props.project.id}`}/>
+        <Link to={`/projects/${props.project.id}`}>
+                <div className="div-navigate">
+                    <div id="div-img">
+                        <img src={props.project.img} alt={`project ${props.project.id}`}/>
+                    </div>
+                    <div id="div-title">
+                        <p id="order">{orderTitle}</p>
+                        <p id="shortInfo">
+                            {props.project.title} — {props.project.shortInfo}
+                        </p>
+                    </div>
                 </div>
-                <div id="div-title">
-                    <p id="order">{orderTitle}</p>
-                    <p id="shortInfo">
-                        {props.project.title} — {props.project.shortInfo}
-                    </p>
-                </div>
-            </div>
-        // </Link>
+        </Link>
     )
 }
 
@@ -31,6 +30,7 @@ function EmptyDiv() {
         </div>
     )
 }
+
 function findNearIndex(index, direction, maxIndex) {
     let nearIndex;
 
@@ -61,9 +61,16 @@ function NavigateProjects(props) {
     }
 
     let previousProjectComponent = (previousIndex >= 0) ?
-        <ViewProject project={projectsInfo[previousIndex]} direction={DIRECTION_PREVIOUS}/> : <EmptyDiv/>;
+        // (<Link to={`/projects/${previousIndex}`}>
+        <ViewProject project={projectsInfo[previousIndex]} direction={DIRECTION_PREVIOUS}/>
+        // </Link>)
+        : <EmptyDiv/>;
     let nextProjectComponent = (nextIndex >= 0) ?
-        <ViewProject project={projectsInfo[nextIndex]} direction={DIRECTION_NEXT}/> : <EmptyDiv/>;
+        // (<Link to={`/projects/${nextIndex}`}>
+        <ViewProject project={projectsInfo[nextIndex]} direction={DIRECTION_NEXT}/>
+        // </Link>)
+
+        : <EmptyDiv/>;
 
     debugger;
 

@@ -1,5 +1,5 @@
 import React from "react";
-import projectsInfo from "../data/data";
+import {projectsInfo} from "../data/data";
 import ProjectBox from "./ProjectBox";
 
 function SectionGallery() {

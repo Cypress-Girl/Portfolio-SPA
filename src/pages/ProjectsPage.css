@@ -27,7 +27,7 @@
 #project-presentation #div-2-in-1 #div-title {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 #project-presentation #div-2-in-1 #div-title input {
@@ -48,6 +48,36 @@
   font-family: MuseoSansCyrl, sans-serif;
   font-size: 88px;
   line-height: 106px;
+  text-align: center;
+}
+#project-presentation #div-2-in-1 #div-title-article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#project-presentation #div-2-in-1 #div-title-article #description {
+  width: 535px;
+  height: 165px;
+  padding-bottom: 30px;
+  color: #02266D;
+  font-family: MuseoSansCyrl;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+}
+#project-presentation #div-2-in-1 #div-title-article #div-line {
+  width: 165px;
+  height: 2px;
+  border-bottom: 3px solid #02266D;
+}
+#project-presentation #div-2-in-1 #div-title-article #subscription {
+  width: 434px;
+  padding-top: 30px;
+  color: #919399;
+  font-family: MuseoSansCyrl, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
   text-align: center;
 }
 

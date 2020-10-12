@@ -16,6 +16,14 @@ p {
   margin-bottom: 40px;
 }
 
+a:focus {
+  outline: none;
+}
+
+.menu-header a:focus {
+  border-bottom: 3px solid #02266D;
+}
+
 header {
   margin: 0;
   padding: 0px 40px;
@@ -31,11 +39,12 @@ header {
 
 .menu-header a {
   text-decoration: none;
-  padding-left: 44px;
   font-size: 15px;
   color: #02266D;
   line-height: 18px;
   text-align: center;
+  padding: 0 8px 17px;
+  margin-left: 28px;
 }
 
 .logo {

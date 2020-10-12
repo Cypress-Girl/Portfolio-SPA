@@ -32,7 +32,7 @@
     #div-title {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
 
       input {
@@ -57,6 +57,41 @@
         line-height: 106px;
         text-align: center;
       }
+    }
+
+    #div-title-article {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      #description {
+        width: 535px;
+        height: 165px;
+        padding-bottom: 30px;
+        color: $base-color;
+        font-family: MuseoSansCyrl;
+        font-size: 20px;
+        line-height: 28px;
+        text-align: center;
+      }
+
+      #div-line {
+        width: 165px;
+        height: 2px;
+        border-bottom: 3px solid $base-color;
+      }
+
+      #subscription {
+        width: 434px;
+        padding-top: 30px;
+        color: #919399;
+        font-family: MuseoSansCyrl, sans-serif;
+        font-size: 17px;
+        line-height: 24px;
+        text-align: center;
+      }
+
     }
   }
 }

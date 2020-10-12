@@ -1,0 +1,28 @@
+.blog-page {
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 -1px 0 0 #E1E2E6;
+}
+
+#div-blog-title {
+  padding-left: 155px;
+  padding-top: 100px;
+}
+#div-blog-title #title {
+  color: #02266D;
+  font-family: MuseoSansCyrl, sans-serif;
+  font-size: 100px;
+  line-height: 120px;
+  text-align: left;
+}
+#div-blog-title #description {
+  width: 781px;
+  padding-top: 60px;
+  color: #41454D;
+  font-family: MuseoSansCyrl, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: left;
+}
+
+/*# sourceMappingURL=BlogPage.css.map */

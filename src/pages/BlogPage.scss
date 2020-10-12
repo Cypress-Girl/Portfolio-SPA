@@ -1,0 +1,30 @@
+@import "../components/general";
+
+.blog-page {
+  width: 100%;
+  height: 300px;
+  box-shadow: 0 -1px 0 0 $shadow-color;
+}
+
+#div-blog-title {
+  padding-left: 155px;
+  padding-top: 100px;
+
+  #title {
+    color: $base-color;
+    font-family: MuseoSansCyrl, sans-serif;
+    font-size: 100px;
+    line-height: 120px;
+    text-align: left;
+  }
+
+  #description {
+    width: 781px;
+    padding-top: 60px;
+    color: #41454D;
+    font-family: MuseoSansCyrl, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: left;
+  }
+}

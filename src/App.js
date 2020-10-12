@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import BlogPage from "./pages/BlogPage";
 import ContactsPage from "./pages/ContactsPage";
+import ArticlesPage from "./components/ArticlesPage";
 
 function App() {
     return (
@@ -27,6 +28,8 @@ function App() {
                     <Route exact={true} path="/blog">
                         <BlogPage/>
                     </Route>
+
+                    <Route exact={true} path="/blog/:id" children={(props) => <ArticlesPage {...props}/>} />
 
                     <Route exact={true} path="/contacts">
                         <ContactsPage/>
