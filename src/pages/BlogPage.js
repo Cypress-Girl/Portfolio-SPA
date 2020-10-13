@@ -5,22 +5,36 @@ import LogoSVG from "../components/LogoSVG";
 import "./BlogPage.css";
 import BlogPageTitle from "../components/BlogPageTitle";
 import BlogSectionArticle from "../components/BlogSectionArticles";
+import {ThemeContext, themes} from "../data/ThemeContext";
 
-function BlogPage() {
-    return (
-        <React.Fragment>
-            <Link to="/" className="logo-mini">
-                <LogoSVG/>
-            </Link>
+class BlogPage extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-            <div className="blog-page">
-                <BlogPageTitle />
-                <BlogSectionArticle />
-                <Footer/>
-            </div>
+    static contextType = ThemeContext;
 
-        </React.Fragment>
-    )
+    //toggle to light theme
+    componentDidMount() {
+        this.context.setTheme(themes.light);
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <Link to="/" className="logo-mini">
+                    <LogoSVG/>
+                </Link>
+
+                <div className="blog-page">
+                    <BlogPageTitle/>
+                    <BlogSectionArticle/>
+                    <Footer/>
+                </div>
+
+            </React.Fragment>
+        )
+    }
 }
 
 export default BlogPage;

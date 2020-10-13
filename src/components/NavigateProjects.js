@@ -108,7 +108,7 @@ function NavigateProjects(props) {
         <div id="navigate-project">
             {previousProjectComponent}
 
-            <div id="div-separator"></div>
+            <div id="div-separator"/>
 
             {nextProjectComponent}
         </div>

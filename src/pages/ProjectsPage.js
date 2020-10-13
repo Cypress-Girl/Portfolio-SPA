@@ -7,30 +7,46 @@ import ProjectPresentation from "../components/ProjectPresentation";
 import NavigateProjects from "../components/NavigateProjects";
 import LogoSVG from "../components/LogoSVG";
 import {TYPE_PROJECT} from "../data/constants";
+import {ThemeContext, themes} from "../data/ThemeContext";
 
-function ProjectsPage(props) {
-    let project = projectsInfo[props.match.params.id];
-    return (
-        <React.Fragment>
-            <Link to="/" className="logo-mini">
-                <LogoSVG/>
-            </Link>
+class ProjectsPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.project = projectsInfo[this.props.match.params.id];
+    }
 
-            <div className="projects-page">
-                <ProjectPresentation project={project} type={TYPE_PROJECT}/>
+    static contextType = ThemeContext;
+    //toggle to light theme
+    componentDidMount() {
+        this.context.setTheme(themes.light);
+    }
 
-                <div id="project-text">
-                    <p>
-                        {project.description}
-                    </p>
+    render() {
+        return (
+            <React.Fragment>
+                <Link to="/" className="logo-mini">
+                    <LogoSVG/>
+                </Link>
+
+                <div className="projects-page">
+                    {/*<ProjectPresentation project={this.project} type={TYPE_PROJECT}/>*/}
+                    <ProjectPresentation project={projectsInfo[this.props.match.params.id]} type={TYPE_PROJECT}/>
+
+                    <div id="project-text">
+                        <p>
+                            {/*{this.project.description}*/}
+                            {projectsInfo[this.props.match.params.id].description}
+                        </p>
+                    </div>
+
+                    {/*<NavigateProjects obj={this.project} type={TYPE_PROJECT}/>*/}
+                    <NavigateProjects obj={projectsInfo[this.props.match.params.id]} type={TYPE_PROJECT}/>
                 </div>
 
-                <NavigateProjects obj={project} type={TYPE_PROJECT}/>
-            </div>
-
-            <Footer/>
-        </React.Fragment>
-    )
+                <Footer/>
+            </React.Fragment>
+        )
+    }
 }
 
 export default ProjectsPage;

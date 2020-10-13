@@ -7,32 +7,27 @@ import BlogPage from "./pages/BlogPage";
 import ContactsPage from "./pages/ContactsPage";
 import ArticlesPage from "./components/ArticlesPage";
 import Header from "./components/Header";
-import {ThemeContext} from "./data/ThemeContext";
-
-const themes = {
-    dark: {
-        background: "#02266D",
-        color: "white",
-        fill: "white"
-    },
-    light: {
-        background: "white",
-        color: "#02266D",
-        fill: "#02266D"
-    }
-}
+import {ThemeContext, themes} from "./data/ThemeContext";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+
+        this.setTheme = (newTheme) => {
+            this.setState(state => ({
+                theme: newTheme
+            }))
+        }
+
         this.state = {
-            dark: false
+            theme: themes.light,
+            setTheme: this.setTheme
         }
     }
 
     render() {
         return (
-            <ThemeContext.Provider value={this.state.dark ? themes.dark : themes.light}>
+            <ThemeContext.Provider value={this.state}>
                 <Router>
                     <div className=".app-wrapper">
 
@@ -43,7 +38,7 @@ class App extends React.Component {
                                 <HomePage/>
                             </Route>
 
-                            <Route path="/projects/:id" children={(props) => <ProjectsPage {...props}/>}/>
+                            <Route exact={true} path="/projects/:id" children={(props) => <ProjectsPage {...props}/>}/>
 
                             <Route exact={true} path="/blog">
                                 <BlogPage/>
