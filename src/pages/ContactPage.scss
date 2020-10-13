@@ -6,10 +6,118 @@
   margin: 0 auto;
   background-color: $base-color;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   #div-left {
     width: 600px;
     height: 100%;
+    box-sizing: border-box;
     background-color: $base-color-dark;
+    padding-top: 150px;
+    padding-left: 160px;
+
+    .social {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: 0;
+      width: max-content;
+    }
+  }
+
+  #div-right {
+    width: auto;
+    height: 100%;
+    padding-top: 140px;
+    padding-left: 27px;
+
+    #title {
+      color: #FFFFFF;
+      font-family: MuseoSansCyrl, sans-serif;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: left;
+    }
+
+    #div-box {
+      width: 665px;
+      height: 210px;
+      background-color: white;
+      margin: 40px 0 30px;
+
+      #text-info {
+        height: 150px;
+        box-sizing: border-box;
+        padding: 16px 30px;
+        color: $gray-color;
+        font-family: MuseoSansCyrl, sans-serif;
+        font-size: 15px;
+        line-height: 24px;
+        text-align: left;
+        border-bottom: 1px solid $shadow-color;
+      }
+    }
+
+    #div-load {
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      #btn-load{
+        display: inline-block;
+        padding: 0 28px;
+        cursor: pointer;
+        color: $base-color;
+        font-family: MuseoSansCyrl, sans-serif;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: left;
+        border: none;
+        background-color: inherit;
+      }
+
+      #btn-file-name {
+        border-radius: 4px;
+        width: 127px;
+        height: 31px;
+        cursor: pointer;
+        box-shadow: none;
+        background-color: inherit;
+        text-align: left;
+        border: 1px solid $shadow-color;
+        background: url("/images/cross.svg") no-repeat center right;
+      }
+    }
+
+    input {
+      width: 433px;
+      height: 45px;
+      display: block;
+      margin: 15px 0;
+      outline: none;
+      border: 1px solid $shadow-color;
+      background-color: inherit;
+      color: rgba(255, 255, 255, 0.3);
+      font-family: MuseoSansCyrl, sans-serif;
+      font-size: 17px;
+      line-height: 20px;
+      text-align: left;
+    }
+
+    #send {
+      width: 201px;
+      height: 45px;
+      color: $base-color;
+      font-family: MuseoSansCyrl, sans-serif;
+      font-size: 17px;
+      line-height: 20px;
+      text-align: center;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import {Link} from "react-router-dom";
+import SocialLink from "./SocialLink";
 
 function Footer() {
     return (
@@ -11,12 +11,7 @@ function Footer() {
             </div>
             <div className="footer-right">
                 <p>Свяжитесь со мной в социальных сетях</p>
-                <div className="social">
-                    <Link to="/">Instagram</Link>
-                    <Link to="/">Facebook</Link>
-                    <Link to="/">ВКонтакте</Link>
-                    <Link to="/">Telegram</Link>
-                </div>
+                <SocialLink/>
             </div>
         </footer>
     )
