@@ -20,10 +20,6 @@ a:focus {
   outline: none;
 }
 
-.menu-header a:focus {
-  border-bottom: 3px solid #02266D;
-}
-
 header {
   margin: 0;
   padding: 0px 40px;
@@ -31,7 +27,7 @@ header {
   position: relative;
   width: 100%;
   height: 60px;
-  color: #02266D;
+  /*color: #02266D;*/
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -45,6 +41,10 @@ header {
   text-align: center;
   padding: 0 8px 17px;
   margin-left: 28px;
+}
+
+.menu-header a:focus {
+  border-bottom: 3px solid #02266D;
 }
 
 .logo {

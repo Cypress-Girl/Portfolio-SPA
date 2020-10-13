@@ -38,12 +38,9 @@ function ProjectPresentation(props) {
         title = <TitleArticle article={obj} />
     }
 
-    debugger;
-
     return (
         <div id="project-presentation">
             <div id="div-2-in-1">
-
                 <div id="div-img">
                     <img src={obj.img} alt={`${obj.id}`}/>
                 </div>

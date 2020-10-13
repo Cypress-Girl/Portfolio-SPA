@@ -1,8 +1,29 @@
 import React from "react";
-import {DIRECTION_NEXT, DIRECTION_PREVIOUS, TYPE_PROJECT} from "../data/constants";
+import {DIRECTION_NEXT, DIRECTION_PREVIOUS, TYPE_ARTICLE, TYPE_PROJECT} from "../data/constants";
 import {blogArticle, projectsInfo} from "../data/data";
 import "./NavigateProjects.css";
 import {Link} from "react-router-dom";
+import {trimText} from "../data/lib";
+
+function ShortInfoProject(props) {
+    let infoStr = trimText(props.obj.shortInfo);
+    return (
+        <p id="shortInfo">
+            {/*{props.obj.title} — {props.obj.shortInfo}*/}
+            {props.obj.title} — {infoStr}
+        </p>
+    )
+}
+
+function ShortInfoArticle(props) {
+    let infoStr = trimText(props.obj.shortInfo);
+    return (
+        <p id="shortInfo">
+            {/*{props.obj.shortInfo}*/}
+            {infoStr}
+        </p>
+    )
+}
 
 function ViewProject(props) {
 
@@ -10,28 +31,35 @@ function ViewProject(props) {
         ((props.direction === DIRECTION_NEXT) ? "Следующий проект" : "Предыдущий проект") :
         ((props.direction === DIRECTION_NEXT) ? "Следующая статья" : "Предыдущая статья");
 
-    let link = (props.type === TYPE_PROJECT) ? `/projects/${props.obj.id}` : `/blog/${props.obj.id}`;
+    let link;
+    let info;
+
+    if (props.type === TYPE_PROJECT) {
+        link = `/projects/${props.obj.id}`;
+        info = <ShortInfoProject obj={props.obj}/>;
+    } else if (props.type === TYPE_ARTICLE) {
+        link = `/blog/${props.obj.id}`;
+        info = <ShortInfoArticle obj={props.obj}/>;
+    }
 
     return (
         <Link to={link}>
-                <div className="div-navigate">
-                    <div id="div-img">
-                        <img src={props.obj.img} alt={`project ${props.obj.id}`}/>
-                    </div>
-                    <div id="div-title">
-                        <p id="order">{orderTitle}</p>
-                        <p id="shortInfo">
-                            {props.obj.title} — {props.obj.shortInfo}
-                        </p>
-                    </div>
+            <div className="div-navigate">
+                <div id="div-img">
+                    <img src={props.obj.img} alt={`${props.obj.id}`}/>
                 </div>
+                <div id="div-title">
+                    <p id="order">{orderTitle}</p>
+                    {info}
+                </div>
+            </div>
         </Link>
     )
 }
 
 function EmptyDiv() {
     return (
-        <div style={{width: "50%"}} />
+        <div style={{width: "50%"}}/>
     )
 }
 
@@ -57,7 +85,7 @@ function NavigateProjects(props) {
     let arrayOfObjects;
     let nextIndex, previousIndex;
 
-    if (props.type === TYPE_PROJECT){
+    if (props.type === TYPE_PROJECT) {
         arrayOfObjects = projectsInfo;
     } else {
         arrayOfObjects = blogArticle;
@@ -71,9 +99,10 @@ function NavigateProjects(props) {
     }
 
     let previousProjectComponent = (previousIndex >= 0) ?
-        <ViewProject obj={arrayOfObjects[previousIndex]} direction={DIRECTION_PREVIOUS} type={props.type} /> : <EmptyDiv/>;
+        <ViewProject obj={arrayOfObjects[previousIndex]} direction={DIRECTION_PREVIOUS} type={props.type}/> :
+        <EmptyDiv/>;
     let nextProjectComponent = (nextIndex >= 0) ?
-        <ViewProject obj={arrayOfObjects[nextIndex]} direction={DIRECTION_NEXT} type={props.type} /> : <EmptyDiv/>;
+        <ViewProject obj={arrayOfObjects[nextIndex]} direction={DIRECTION_NEXT} type={props.type}/> : <EmptyDiv/>;
 
     return (
         <div id="navigate-project">

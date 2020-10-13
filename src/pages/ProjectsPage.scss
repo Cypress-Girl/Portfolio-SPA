@@ -6,7 +6,9 @@
   align-items: center;
   width: 100%;
   height: 510px;
-  box-shadow: 0 1px 0 0 $shadow-color, 0 -1px 0 0 $shadow-color;
+  //box-shadow: 0 1px 0 0 $shadow-color, 0 -1px 0 0 $shadow-color;
+  border-top: 1px solid $shadow-color;
+  border-bottom: 1px solid $shadow-color;
 
   #div-2-in-1 {
     width: 927px;
@@ -21,6 +23,10 @@
       width: 433px;
       height: 348px;
       overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       img {
         height: auto;
