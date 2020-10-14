@@ -42,7 +42,6 @@ header #left-side {
 .menu-header a {
   text-decoration: none;
   font-size: 15px;
-  color: #02266D;
   line-height: 18px;
   text-align: center;
   padding: 0 8px 17px;
@@ -50,7 +49,7 @@ header #left-side {
 }
 
 .menu-header a:focus {
-  border-bottom: 3px solid #02266D;
+  border-bottom: 3px solid;
 }
 
 .logo {
@@ -69,3 +68,18 @@ header #left-side {
   top: 15px;
   left: 155px;
 }
+
+.dark-theme {
+  background-color: #02266D;
+  color: white;
+  fill: white;
+  border-color: white;
+}
+
+.light-theme {
+  background-color: white;
+  color: #02266D;
+  fill: #02266D;
+  border-color: #02266D;
+}
+

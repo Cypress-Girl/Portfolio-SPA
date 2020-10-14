@@ -72,6 +72,7 @@
   line-height: 18px;
   text-align: left;
   border: none;
+  outline: none;
   background-color: inherit;
 }
 .contacts-page #div-right #div-load #btn-file-name {
@@ -93,7 +94,7 @@
   outline: none;
   border: 1px solid #E1E2E6;
   background-color: inherit;
-  color: rgba(255, 255, 255, 0.3);
+  color: white;
   font-family: MuseoSansCyrl, sans-serif;
   font-size: 17px;
   line-height: 20px;
@@ -107,6 +108,7 @@
   font-size: 17px;
   line-height: 20px;
   text-align: center;
+  outline: #ff8282;
 }
 
 /*# sourceMappingURL=ContactPage.css.map */
